@@ -9,7 +9,7 @@ import { MobileNav } from "@/components/mobile-nav"
 export const metadata = {
   title: "About JioStream | Open Source Streaming Platform",
   description:
-    "Learn about JioStream, an open source educational project that demonstrates streaming platform functionality using Next.js, TMDB API, and Supabase.",
+    "Learn about JioStream, an open source educational project that nstrates streaming platform functionality using Next.js, TMDB API, and Supabase.",
 }
 
 export default function AboutPage() {
@@ -65,19 +65,19 @@ export default function AboutPage() {
                 <Code size={14} />
                 <span>Open Source Project</span>
               </div>
-              <h2 className="text-2xl font-bold">Educational Streaming Platform Demo</h2>
+              <h2 className="text-2xl font-bold"> Streaming Platform </h2>
             </div>
           </div>
 
           <div className="space-y-6">
             <p className="text-gray-300">
-              JioStream is an open source educational project that demonstrates how to build a modern streaming platform
+              JioStream is an open source educational project that nstrates how to build a modern streaming platform
               using Next.js, TMDB API, and Supabase. This project is designed for learning purposes only and is not
               affiliated with any commercial streaming service.
             </p>
 
             <p className="text-gray-300">
-              Created as a demonstration of web development techniques and best practices, JioStream showcases how to
+              Created as a nstration of web development techniques and best practices, JioStream showcases how to
               build a responsive, feature-rich application with authentication, data fetching, and user experience
               features similar to popular streaming platforms.
             </p>
@@ -145,11 +145,11 @@ export default function AboutPage() {
                 <li>Does not host or distribute any copyrighted content</li>
                 <li>Uses TMDB API for movie and TV show data, but is not endorsed by TMDB</li>
                 <li>Only stores minimal user data required for authentication and user experience features</li>
-                <li>Uses embedded URLs for video playback demonstration purposes only</li>
+                <li>Uses embedded URLs for video playback nstration purposes only</li>
               </ul>
               <p className="text-gray-300 mt-4">
                 All movie and TV show data is the property of their respective owners. This project respects copyright
-                laws and is designed solely for educational and demonstration purposes.
+                laws and is designed solely for educational and nstration purposes.
               </p>
             </div>
 
@@ -161,7 +161,7 @@ export default function AboutPage() {
             </p>
 
             <div className="flex justify-center mt-8">
-              <Link href="https://github.com/yourusername/jiostream" target="_blank" rel="noopener noreferrer">
+              <Link href="https://github.com/RavnOP/Jio-Cinema-Clone-Webapp-Using-TMDB-API-and-Supabase-Database" target="_blank" rel="noopener noreferrer">
                 <Button className="bg-blue-600 hover:bg-blue-700">
                   <Github className="mr-2 h-4 w-4" />
                   View on GitHub
@@ -171,96 +171,6 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
-
-      <footer className="bg-gray-900 border-t border-gray-800 py-6 sm:py-8 mt-12">
-        <div className="container px-3 sm:px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-            <div>
-              <h3 className="font-bold mb-3 sm:mb-4">JioStream</h3>
-              <ul className="space-y-2 text-xs sm:text-sm text-gray-400">
-                <li>
-                  <Link href="/about" className="hover:text-white transition">
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/help" className="hover:text-white transition">
-                    Help Center
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/terms" className="hover:text-white transition">
-                    Terms of Use
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-bold mb-3 sm:mb-4">Browse</h3>
-              <ul className="space-y-2 text-xs sm:text-sm text-gray-400">
-                <li>
-                  <Link href="/movies" className="hover:text-white transition">
-                    Movies
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/shows" className="hover:text-white transition">
-                    TV Shows
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-bold mb-3 sm:mb-4">Support</h3>
-              <ul className="space-y-2 text-xs sm:text-sm text-gray-400">
-                <li>
-                  <Link href="/faqs" className="hover:text-white transition">
-                    FAQs
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="hover:text-white transition">
-                    Contact Us
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition">
-                    Feedback
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-bold mb-3 sm:mb-4">Connect</h3>
-              <ul className="space-y-2 text-xs sm:text-sm text-gray-400">
-                <li>
-                  <Link
-                    href="https://github.com/yourusername/jiostream"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-white transition"
-                  >
-                    GitHub
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition">
-                    Twitter
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition">
-                    LinkedIn
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-gray-800 text-center text-xs sm:text-sm text-gray-500">
-            <p>© 2023 JioStream. This is an open source project for educational purposes.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }
