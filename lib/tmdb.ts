@@ -16,11 +16,11 @@ export async function fetchTMDB(endpoint: string, params: Record<string, string>
   } else {
     // Server-side: use TMDB API directly
     url = new URL(`https://api.themoviedb.org/3/${endpoint}`)
-    const apiKey = process.env.NEXT_PUBLIC_TMDB_API
+    const apiKey = process.env.NEXT_PUBLIC_TMDB_API;
     if (!apiKey) {
-      throw new Error("TMDB API key is not defined")
+      throw new Error("TMDB API key is not defined");
     }
-    url.searchParams.append("api_key", apiKey)
+    url.searchParams.append("api_key", apiKey);
   }
 
   // Add additional params

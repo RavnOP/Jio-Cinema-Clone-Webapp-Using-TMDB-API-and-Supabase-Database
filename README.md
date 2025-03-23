@@ -1,7 +1,5 @@
 ﻿# 🎬 JioStream - Open Source Streaming Platform
-
-![JioStream Banner](https://hebbkx1anhila5yf.public.blob.vercel-storage.com/US-en-20250317-TRIFECTA-perspective_46e2ea88-09df-4e34-8e0c-2a2e8a2cda94_large.jpg-1QadysCtqt5zBwcjLYLXQi4aOUQub6.jpeg)
-
+![Screenshot_23-3-2025_164830_jiostream netlify app](https://github.com/user-attachments/assets/fb3ec91d-8f18-43ef-8bed-6a7af77ed73f)
 <div align="center">
 
 [![Next.js](https://img.shields.io/badge/Next.js-13.0-blueviolet?style=for-the-badge&logo=next.js)](https://nextjs.org/)
@@ -42,8 +40,8 @@ JioStream is an open-source streaming platform demo that showcases how modern st
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/jiostream.git
-cd jiostream
+git clone https://github.com/RavnOP/Jio-Cinema-Clone-Webapp-Using-TMDB-API-and-Supabase-Database.git
+
 ```
 
 2. Install dependencies:
@@ -110,8 +108,7 @@ This is an educational project and is not intended for commercial use. All movie
 ## 👤 Author
 
 **Abhishek Singh**
-- GitHub: [@yourusername](https://github.com/RavnOP)
-- LinkedIn: [Your Profile](https://linkedin.com/in/yourprofile)
+- GitHub: [RavnOP](https://github.com/RavnOP)
 
 ## 🙏 Acknowledgments
 
@@ -121,6 +118,12 @@ This is an educational project and is not intended for commercial use. All movie
 - [Shadcn UI](https://ui.shadcn.com/) for UI components
 
 ---
+
+## Demo Images 📷📸🎥
+![JioStream Landing Page](https://github.com/user-attachments/assets/39f00c85-2191-405a-a655-620290f85ef8)
+![JioStream Home Page](https://github.com/user-attachments/assets/bd526a42-817a-4344-b55f-8a91d2973ef5)
+![JioStream Detail Page](https://github.com/user-attachments/assets/a6853a88-7776-4c2f-9552-537980291641)
+
 
 <div align="center">
 ⭐️ If you found this project helpful, please give it a star!
