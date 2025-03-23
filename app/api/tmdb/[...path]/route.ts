@@ -25,7 +25,7 @@ export async function GET(request: NextRequest, context: { params: { path: strin
 
     // Construct TMDB API URL
     const tmdbBaseUrl = "https://api.themoviedb.org/3";
-    const apiKey = "aad3fab1607b552befd9a2ac37e556af"; // Secure this in an environment variable
+    const apiKey = process.env.NEXT_PUBLIC_TMDB_API
     let url = `${tmdbBaseUrl}/${path}?api_key=${apiKey}`;
 
     for (const [key, value] of searchParams.entries()) {
