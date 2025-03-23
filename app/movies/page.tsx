@@ -73,12 +73,12 @@ export default function MoviesPage({ searchParams }: { searchParams: { page?: st
               </TabsTrigger>
               <TabsTrigger value="top-rated" asChild>
                 <Link href="/movies?tab=top-rated" className="h-full flex items-center justify-center">
-                  Top Rated
+                  Top
                 </Link>
               </TabsTrigger>
               <TabsTrigger value="now-playing" asChild>
                 <Link href="/movies?tab=now-playing" className="h-full flex items-center justify-center">
-                  Now Playing
+                On air
                 </Link>
               </TabsTrigger>
               <TabsTrigger value="upcoming" asChild>

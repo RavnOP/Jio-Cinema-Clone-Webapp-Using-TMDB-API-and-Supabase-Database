@@ -49,7 +49,7 @@ export default function HomePage() {
                 <MovieRow title="Popular Movies" endpoint="movie/popular" viewAllLink="/movies" />
               </Suspense>
               <Suspense fallback={<MovieRowSkeleton title="Top Rated" />}>
-                <MovieRow title="Top Rated" endpoint="movie/top_rated" viewAllLink="/movies/top-rated" />
+                <MovieRow title="Top Rated" endpoint="movie/top_rated" viewAllLink="/movies" />
               </Suspense>
             </TabsContent>
             <TabsContent value="movies" className="space-y-6 sm:space-y-8">

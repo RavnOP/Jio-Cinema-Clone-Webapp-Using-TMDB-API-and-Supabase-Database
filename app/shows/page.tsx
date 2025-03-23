@@ -74,17 +74,17 @@ export default function ShowsPage({ searchParams }: { searchParams: { page?: str
               </TabsTrigger>
               <TabsTrigger value="top-rated" asChild>
                 <Link href="/shows?tab=top-rated" className="h-full flex items-center justify-center">
-                  Top Rated
+                  Top
                 </Link>
               </TabsTrigger>
               <TabsTrigger value="airing-today" asChild>
                 <Link href="/shows?tab=airing-today" className="h-full flex items-center justify-center">
-                  Airing Today
+                  Airing
                 </Link>
               </TabsTrigger>
               <TabsTrigger value="on-the-air" asChild>
                 <Link href="/shows?tab=on-the-air" className="h-full flex items-center justify-center">
-                  On The Air
+                  On Air
                 </Link>
               </TabsTrigger>
             </TabsList>
