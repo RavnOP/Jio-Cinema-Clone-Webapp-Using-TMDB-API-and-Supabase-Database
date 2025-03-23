@@ -1,92 +1,65 @@
-// Simple in-memory cache
-const cache: Record<string, { data: any; timestamp: number }> = {}
-const CACHE_DURATION = 5 * 60 * 1000 // 5 minutes
-const FETCH_TIMEOUT = 8000 // 8 seconds timeout
+const cache: Record<string, { data: any; timestamp: number }> = {};
+const CACHE_DURATION = 5 * 60 * 1000;
+const FETCH_TIMEOUT = 8000;
 
 export async function fetchTMDB(endpoint: string, params: Record<string, string> = {}) {
-  // Determine if we're on the client or server
-  const isClient = typeof window !== "undefined"
-
-  // Build the URL - use proxy on client, direct on server
-  let url: URL
+  const isClient = typeof window !== "undefined";
+  let url: URL;
 
   if (isClient) {
-    // Client-side: use our proxy endpoint
-    url = new URL(`/api/tmdb/${endpoint}`, window.location.origin)
+    url = new URL(`/api/tmdb/${endpoint}`, window.location.origin);
   } else {
-    // Server-side: use TMDB API directly
-    url = new URL(`https://api.themoviedb.org/3/${endpoint}`)
-    const apiKey = process.env.NEXT_PUBLIC_TMDB_API;
-    if (!apiKey) {
-      throw new Error("TMDB API key is not defined");
-    }
-    url.searchParams.append("api_key", apiKey);
+    url = new URL(`https://api.themoviedb.org/3/${endpoint}`);
+    url.searchParams.append("api_key", process.env.NEXT_PUBLIC_TMDB_API || "");
   }
 
-  // Add additional params
   Object.entries(params).forEach(([key, value]) => {
-    url.searchParams.append(key, value)
-  })
+    url.searchParams.append(key, value);
+  });
 
-  const cacheKey = url.toString()
-
-  // Check cache first
-  const cachedData = cache[cacheKey]
+  const cacheKey = url.toString();
+  const cachedData = cache[cacheKey];
   if (cachedData && Date.now() - cachedData.timestamp < CACHE_DURATION) {
-    return cachedData.data
+    return cachedData.data;
   }
 
   try {
-    // Create a timeout promise
     const timeoutPromise = new Promise((_, reject) => {
-      setTimeout(() => reject(new Error("Request timeout")), FETCH_TIMEOUT)
-    })
+      setTimeout(() => reject(new Error("Request timeout")), FETCH_TIMEOUT);
+    });
 
-    // Create the fetch promise
     const fetchPromise = fetch(url.toString(), {
-      next: { revalidate: 3600 }, // Cache for 1 hour on the server
+      next: { revalidate: 3600 },
       headers: isClient
         ? {}
         : {
             Accept: "application/json",
             "User-Agent": "JioCinema/1.0",
           },
-    })
+    });
 
-    // Race the fetch against the timeout
-    const response = (await Promise.race([fetchPromise, timeoutPromise])) as Response
+    const response = (await Promise.race([fetchPromise, timeoutPromise])) as Response;
 
     if (!response.ok) {
-      throw new Error(`API error: ${response.status}`)
+      throw new Error(`API error: ${response.status}`);
     }
 
-    const data = await response.json()
-
-    // Store in cache
-    cache[cacheKey] = { data, timestamp: Date.now() }
-
-    return data
+    const data = await response.json();
+    cache[cacheKey] = { data, timestamp: Date.now() };
+    return data;
   } catch (error) {
-    console.error(`Error fetching data from ${endpoint}:`, error)
-
-    // Return empty results or cached data if available
+    console.error(`Error fetching data from ${endpoint}:`, error);
     if (cachedData) {
-      console.log(`Using cached data for ${endpoint}`)
-      return cachedData.data
+      return cachedData.data;
     }
 
-    // Return appropriate empty data structure based on endpoint
     if (endpoint.includes("season")) {
-      return { episodes: [] }
+      return { episodes: [] };
     } else if (endpoint.includes("credits")) {
-      return { cast: [], crew: [] }
+      return { cast: [], crew: [] };
     } else if (endpoint.includes("videos")) {
-      return { results: [] }
-    } else if (
-      endpoint.includes("movie/") &&
-      !endpoint.includes("/similar") &&
-      !endpoint.includes("/recommendations")
-    ) {
+      return { results: [] };
+    } else if (endpoint.includes("movie/") && !endpoint.includes("/similar") && !endpoint.includes("/recommendations")) {
       return {
         title: "Movie information unavailable",
         overview: "Could not load movie details at this time.",
@@ -94,7 +67,7 @@ export async function fetchTMDB(endpoint: string, params: Record<string, string>
         release_date: "",
         poster_path: "",
         backdrop_path: "",
-      }
+      };
     } else if (endpoint.includes("tv/") && !endpoint.includes("/similar") && !endpoint.includes("/recommendations")) {
       return {
         name: "Show information unavailable",
@@ -104,10 +77,9 @@ export async function fetchTMDB(endpoint: string, params: Record<string, string>
         first_air_date: "",
         poster_path: "",
         backdrop_path: "",
-      }
+      };
     } else {
-      return { results: [] }
+      return { results: [] };
     }
   }
 }
-
