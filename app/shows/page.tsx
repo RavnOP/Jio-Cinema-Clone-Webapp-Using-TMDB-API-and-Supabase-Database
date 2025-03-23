@@ -74,7 +74,7 @@ export default function ShowsPage({ searchParams }: { searchParams: { page?: str
               </TabsTrigger>
               <TabsTrigger value="top-rated" asChild>
                 <Link href="/shows?tab=top-rated" className="h-full flex items-center justify-center">
-                  Top
+                  Top Rated
                 </Link>
               </TabsTrigger>
               <TabsTrigger value="airing-today" asChild>
