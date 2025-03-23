@@ -2,7 +2,7 @@ import { NextResponse } from "next/server"
 
 export async function GET() {
   try {
-    const apiKey = "aad3fab1607b552befd9a2ac37e556af"
+    const apiKey = process.env.NEXT_PUBLIC_TMDB_API
     const response = await fetch(`https://api.themoviedb.org/3/configuration/countries?api_key=${apiKey}`, {
       headers: {
         Accept: "application/json",

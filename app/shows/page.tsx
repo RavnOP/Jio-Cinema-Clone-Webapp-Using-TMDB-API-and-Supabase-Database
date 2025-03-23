@@ -79,7 +79,7 @@ export default function ShowsPage({ searchParams }: { searchParams: { page?: str
               </TabsTrigger>
               <TabsTrigger value="airing-today" asChild>
                 <Link href="/shows?tab=airing-today" className="h-full flex items-center justify-center">
-                  Airing
+                  Airing Now
                 </Link>
               </TabsTrigger>
               <TabsTrigger value="on-the-air" asChild>

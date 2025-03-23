@@ -7,7 +7,7 @@ export async function GET(request: Request, { params }: { params: { type: string
       return NextResponse.json({ error: "Invalid type. Must be 'movie' or 'tv'" }, { status: 400 })
     }
 
-    const apiKey = "aad3fab1607b552befd9a2ac37e556af"
+    const apiKey = process.env.NEXT_PUBLIC_TMDB_API
     const response = await fetch(`https://api.themoviedb.org/3/genre/${type}/list?api_key=${apiKey}`, {
       headers: {
         Accept: "application/json",
