@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title: "JioStream - Open Source Streaming Platform | Watch Movies & TV Shows",
     description:
       "JioStream is an open source streaming platform demo built with Next.js, TMDB API, and Supabase. Explore movies and TV shows in this educational project.",
-    url: "https://jiostream.vercel.app",
+    url: "https://jiostream.netlify.app",
     siteName: "JioStream",
     images: [
       {
@@ -39,9 +39,9 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://jiostream.vercel.app",
+    canonical: "https://jiostream.netlify.app",
     languages: {
-      "en-US": "https://jiostream.vercel.app/en-US",
+      "en-US": "https://jiostream.netlify.app/en-US",
     },
   },
 }
@@ -115,7 +115,7 @@ export default function LandingPage() {
                   Explore  <ChevronRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-              <Link href="https://github.com/yourusername/jiostream" target="_blank" rel="noopener noreferrer">
+              <Link href="https://github.com/RavnOP/Jio-Cinema-Clone-Webapp-Using-TMDB-API-and-Supabase-Database" target="_blank" rel="noopener noreferrer">
                 <Button
                   size="lg"
                   variant="outline"
@@ -380,10 +380,10 @@ export default function LandingPage() {
             "@context": "https://schema.org",
             "@type": "WebSite",
             name: "JioStream",
-            url: "https://jiostream.vercel.app",
+            url: "https://jiostream.netlify.app",
             potentialAction: {
               "@type": "SearchAction",
-              target: "https://jiostream.vercel.app/search?q={search_term_string}",
+              target: "https://jiostream.netlify.app/search?q={search_term_string}",
               "query-input": "required name=search_term_string",
             },
             description:
@@ -400,8 +400,8 @@ export default function LandingPage() {
             "@context": "https://schema.org",
             "@type": "Organization",
             name: "JioStream",
-            url: "https://jiostream.vercel.app",
-            logo: "https://jiostream.vercel.app/logo.png",
+            url: "https://jiostream.netlify.app",
+            logo: "https://jiostream.netlify.app/logo.png",
             description: "An open source educational project demonstrating streaming platform functionality",
           }),
         }}
